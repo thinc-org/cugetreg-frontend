@@ -246,6 +246,7 @@ export async function getServerSideProps(
     }
   } catch (e) {
     if (e instanceof ApolloError) {
+      console.warn(`CourseDetail not found query=${JSON.stringify(context.query)}`, e)
       return {
         notFound: true,
       }

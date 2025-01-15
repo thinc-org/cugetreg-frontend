@@ -25,7 +25,7 @@ export class CourseService {
     })
 
     if (!course) {
-      throw new NotFoundError("Can't find a course with the given parameters")
+      throw new NotFoundError(`Can't find a course with the given parameters ${JSON.stringify({courseNo, semester, academicYear, studyProgram})}`)
     }
     return course
   }
